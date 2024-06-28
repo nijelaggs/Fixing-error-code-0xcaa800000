@@ -1,7 +1,15 @@
 <h1>Fixing error code 0xcaa800000 & Other Microsoft Login Issues</h1>
 
 <h2>Description</h2>
-This PowerShell script is designed to delete a specific folder associated with a user profile in Windows, even if processes are locking the files within it. Here’s how it works:
+This PowerShell script is designed to delete a specific folder associated with a user profile in Windows. <br> 
+
+<br>Even if processes are locking the files within it. <br>
+
+That folder is  'Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy', when deleted it will disrupt/stop authentication services. <br>
+
+Prompting you reauthenticate solving the error code you were reciving. <br>
+
+Here’s how it works: <br>
 
 <h2>Languages and Utilities Used</h2>
 
@@ -15,39 +23,7 @@ This PowerShell script is designed to delete a specific folder associated with a
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Prompt for Username: The script starts by prompting the user to enter a username. This is used to construct the path to the target folder: <br/>
-<img src="https://i.imgur.com/RjmdE9p.png" height="30%" width="30%" alt="Launch the Powershell ISE in Admin Mode"/>
-<br />
-<br />
-Download and open the - "Adding Users to Active Directory" Script:  <br/>
-<img src="https://i.imgur.com/VbfK2ZA.png" height="70%" width="70%" alt="Download and open the - Adding to Active Directory Script"/>
-<br />
-<br />
-At the top - press the green arrow to run the script: <br/>
-<img src="https://i.imgur.com/adW8h8E.png" height="70%" width="70%" alt="At the top - press the green arrow to run the script"/>
-<br />
-<br />
-Enter the users first and last name as well and the department they will be. Then press enter:  <br/>
-<img src="https://i.imgur.com/uyvflvt.png" height="70%" width="70%" alt="Enter the department and user first and last name as see below then press enter"/>
-<br />
-<br />
-Enter the user first and last name again, just as before, then press enter:  <br/>
-<img src="https://i.imgur.com/9SiBGB2.png" height="70%" width="70%" alt="Enter the user first and last name again, then press enter"/>
-<br />
-<br />
-There will be a printout of all the properties that have been changed and you're finished!:  <br/>
-<img src="https://i.imgur.com/6XvnXsP.png" height="70%" width="70%" alt="There will be a printout of all the properties that have been changed and you're finished!"/>
-<br />
-<br />
-</p>
-
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+1. Prompt for Username: The script starts by prompting the user to enter a username. This is used to construct the path to the target folder: <br/>
+<br>2. Define Folder Path: Using the entered username, the script defines the path to the folder that needs to be deleted. <br>
+<br>3. Function to Stop Locking Processes: The script includes a function, Stop-LockingProcesses, which identifies and stops any processes that are locking files in the specified folder. This is done to ensure the folder can be deleted without errors. <br>
 
